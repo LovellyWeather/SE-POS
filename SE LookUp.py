@@ -1,6 +1,7 @@
 from tkinter import *
 
 root = Tk()
+root.title("Item Search")
 
 '''Frames boiiii'''
 LeftFrame = Frame(root)
