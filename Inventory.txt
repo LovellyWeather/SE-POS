@@ -1,0 +1,14 @@
+00001 Orange 1.00 40 no no
+00002 Banana 1.00 50 no no
+00003 Grenade 10.00 60 yes no
+00004 Steak 7.00 45 no no
+00005 Apple 1.00 100 no no
+00006 Heelies 20.00 1 yes no
+00007 BattleToads 100.00 1000 yes no
+00008 Potato-Chips 3.50 45 yes no
+00009 Paper-Towels 3.00 90 yes no
+00010 Milk 3.29 65 no no
+00011 Deoderant 4.50 70 yes no
+00012 Bread 2.00 80 no no
+00013 Flour 2.00 70 yes no
+00014 Mountain-Dew 3.00 100 no yes
