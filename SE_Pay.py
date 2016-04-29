@@ -43,6 +43,9 @@ def addCard():
         Mid.insert(INSERT,"Incorrect input into debit/credit card code or amount.")
         Mid.pack()
 def finishSale():
+    fh = open("Sales.txt", 'a')
+    fh.write("Sale Complete"+" \n"+" \n")
+    fh.close()
     root.destroy()
 def cancelSale():
     fh = open("Sales.txt", 'a')
