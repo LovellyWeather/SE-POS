@@ -52,7 +52,7 @@ InventoryList.pack(fill=BOTH)
 eScroll.pack(side=RIGHT, fill=Y)
 EmployeeDirectoryList.pack(fill=BOTH)
 
-file = open("posinventory.txt", 'r')
+file = open("Inventory.txt", 'r')
 for line in file:
     InventoryList.insert(END, line)
 file.close()
