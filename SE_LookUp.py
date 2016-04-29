@@ -1,19 +1,42 @@
 from tkinter import *
+#from SE_Register import AddToItems
+#import SE_Register
 def LookUp():
     def searchList():
-        searchItem=eSearch.get()
-        f = open('Inventory.txt', "r")
-        for line in f:
-            itemList=line.split(" ")
-            itemWord=itemList[1].split("-")
-            for words in itemWord:
-                if searchItem.lower()==words.lower():
-                    Inventory.insert(END, itemList[0]+" "+ itemList[1] )
+        try:
+            searchItem=eSearch.get()
+            f = open('Inventory.txt', "r")
+            for line in f:
+                itemList=line.split(" ")
+                itemWord=itemList[1].split("-")
+                for words in itemWord:
+                    if searchItem.lower()==words.lower():
+                        Inventory.insert(END, itemList[0]+" "+ itemList[1] )
+        except:
+            error= Tk()
+            Mid = Text(error)
+            Mid.insert(INSERT,"Something is wrong with the Inventory.")
+            Mid.pack()
+##    def CouponSearchList():
+##        searchItem=eSearch.get()
+##        f = open('Coupons.txt', "r")
+##        for line in f:
+##            itemList=line.split(" ")
+##            itemWord=itemList[1].split("-")
+##            for words in itemWord:
+##                if searchItem.lower()==words.lower():
+##                    Inventory.insert(END, itemList[0]+" "+ itemList[1] )
     def AddSale():
         active=Inventory.get(ACTIVE)
         activeList=active.split(" ")
-        #Inventory.insert(END,  activeList[1])
-        eAddItem.insert(0, activeList[0])
+        eAddToSale.insert(0,  activeList[0])
+        fW = open('searchItem.txt','w')
+        fW.write(activeList[0]) # python will convert \n to os.linesep
+        fW.close()
+        #eAddItem.insert(0, activeList[0])
+        rt.destroy()
+    def destroyWindow():
+        rt.destroy()
 
     rt = Tk()
 
@@ -42,7 +65,9 @@ def LookUp():
 
     '''Buttonszz boiii'''
     bAddToSale = Button(TopFrame,text="Add To Sale", command=AddSale)
-    bDone = Button(TopFrame,text="Done")
+    eAddToSale = Entry(TopFrame)
+    bDone = Button(TopFrame,text="Done", command=destroyWindow)
 
     bAddToSale.pack(pady=20)
+    eAddToSale.pack(side=TOP)
     bDone.pack(side=BOTTOM, pady=20)
