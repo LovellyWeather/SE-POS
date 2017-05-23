@@ -1,1 +1,1 @@
-# SE-POS
+# Simple Python Point-Of-Sale Register
